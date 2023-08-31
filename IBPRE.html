@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IBPRE</title>
+    <link rel="icon" type="image/png" href="ibpre.png">
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333333;
+            z-index: 1;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .menu li {
+            float: left;
+            width: 25%;
+        }
+
+        .menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        .menu li a:hover {
+            background-color: #111111;
+        }
+
+        img {
+            width: 100%;
+            height: 550px; /* Maintain aspect ratio */
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right:50%;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .tools-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Wrap tools boxes to the next line if there's not enough space */
+        }
+
+        .tools-box {
+            width: 200px;
+            height: 100px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .heading {
+            text-decoration: underline;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center; /* Space images evenly */
+        }
+
+        .image-container img {
+            width: 70%; /* Set the width for each image (adjust as needed) */
+            max-height: 200px; /* Set the max height to maintain aspect ratio */
+        }
+
+        .image-container a {
+            text-decoration: none;
+            display: block; /* Make the entire image a clickable link */
+            text-align: center;
+        }
+        .faq-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .answer {
+            display: none; 
+            padding-left: 20px;
+        }
+
+        .question:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#prbm">Problem Statement</a></li>
+            <li><a href="#tools">Tools Used</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#links">Links</a></li>
+        </ul>
+    </div>
+    <img id="prbm" src="problem statement.png" alt="Problem Statement">
+    <div class="text-overlay">
+        <h2><u>Problem Statement</u></h2>
+        <p>	Sensitive data must be stored securely and accessed only by authorized users in a cloud storage environment. Traditional encryption techniques provide strong security guarantees but can be inefficient for sharing data with multiple authorized users. Data deduplication techniques can significantly reduce the storage space required and improve transfer efficiency. Applying data deduplication to encrypted data is challenging due to the randomness introduced by encryption.
+
+            A secure and efficient storage solution is needed that combines encryption and data deduplication in a cloud environment. IBPRE can be used to encrypt the data and delegate decryption rights to specific users. Data deduplication can then be applied to the encrypted data, reducing storage space and improving transfer efficiency. A re-encryption key is generated for a user when they request access to the data. The proxy server re-encrypts the data using this key to ensure the data remains encrypted and only accessible by authorized users. 
+        
+            The combined solution ensures secure storage and efficient sharing of data in a cloud environment.
+        </p>
+    </div>
+    <h2 id="tools" class="heading">Tools Used</h2>
+    <div class="tools-container">
+        <div class="tools-box">
+            <h3>Programming languages</h3>
+            <p>Python</p>
+        </div>
+        <div class="tools-box">
+            <h3>Cloud service</h3>
+            <p>Google Buckets</p>
+        </div>
+        <div class="tools-box">
+            <h3>Database</h3>
+            <p>MySQL</p>
+        </div>
+    </div>
+    <br>
+    <h2 id="faqs" class="heading">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="question">Q: What is Identity-Based Proxy Reencryption (IBPRE), and how does it relate to data duplication in the cloud?</div>
+            <div class="answer">A:  IBPRE is a cryptographic technique that allows data to be reencrypted for specific recipients. In our project, we use IBPRE to enhance data security in a cloud environment with data duplication.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: Why is IBPRE important for data security in cloud environments with data duplication?</div>
+            <div class="answer">A: IBPRE enables secure sharing of duplicated data by allowing authorized users to access it while maintaining encryption.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: What are the primary challenges in implementing IBPRE for data duplication in the cloud?</div>
+            <div class="answer">A: Challenges include key management, access control, and ensuring efficient reencryption of data.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: How can IBPRE be used to prevent unauthorized access to duplicated data in the cloud?</div>
+            <div class="answer">A: IBPRE enables data owners to reencrypt data for specific users, ensuring that only authorized users can decrypt and access it.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: What encryption schemes and algorithms are commonly used with IBPRE for cloud data duplication?</div>
+            <div class="answer">A: AES is used in this project, common encryption schemes include RSA, Elliptic Curve Cryptography (ECC), and lattice-based cryptography.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: What are the potential privacy implications of using IBPRE in cloud data duplication scenarios?</div>
+            <div class="answer">A: Privacy concerns may arise if the reencryption process is not properly controlled, emphasizing the importance of access policies.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: WHy is Google cloud chose over other cloud platforms?</div>
+            <div class="answer">A: Google Cloud may be chosen over other cloud platforms for this project due to its strong security, key management, identity services, global reach, and integration options.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: Why is python chosen to implement the project?</div>
+            <div class="answer">A: Python is chosen for this project due to its simplicity, extensive libraries for cryptographic operations, and broad community support, facilitating the implementation of IBPRE efficiently.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: Why are cloud platforms used over databases?</div>
+            <div class="answer">A: Cloud platforms are preferred over traditional databases for IBPRE projects because they offer scalable, on-demand storage and computing resources, enabling efficient management of duplicated data and cryptographic operations. Additionally, they provide robust security features and global accessibility, critical for IBPRE's secure data sharing across networks.</div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the display of answers when clicking on questions
+        const questions = document.querySelectorAll('.question');
+
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    <h2 id="links" class="heading">Links</h2>
+    <div class="image-container">
+        <a href="https://www.sciencedirect.com/science/article/pii/S1383762121002289" target="_blank">
+            <img src="research.png" alt="Image 1">
+        </a>
+        <a href="https://github.com/SindhujaNandamudi/IBPRE" target="_blank">
+            <img src="code.png" alt="Image 2">
+        </a>
+    </div>
+</body>
+</html>
